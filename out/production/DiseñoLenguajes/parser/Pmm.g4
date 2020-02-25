@@ -19,6 +19,8 @@ CHAR_CONSTANT: '\'' . '\'' | '\'\\n\'' | '\'\\t\'' | '\'\\' INT_CONSTANT '\'';
 
 
 
+
+//...
 WS: [ \n\t\r]+ -> skip;
 LINE_COMMENT: '#'~[\n\r]* -> skip;
 MULTILINE_COMMENT: '"""' .*? '"""' -> skip;
