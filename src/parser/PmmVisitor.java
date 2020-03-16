@@ -1,5 +1,13 @@
 // Generated from C:/Users/alvaro/IdeaProjects/DiseñoLenguajes/src/parser\Pmm.g4 by ANTLR 4.8
 package parser;
+
+
+import ast.*;
+	import ast.expressions.*;
+	import ast.definitions.*;
+	import ast.statements.*;
+	import ast.types.*;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -41,12 +49,6 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDefFuncion(PmmParser.DefFuncionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PmmParser#defVariable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDefVariable(PmmParser.DefVariableContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link PmmParser#parametros}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -59,11 +61,17 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDefVariablesLocales(PmmParser.DefVariablesLocalesContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PmmParser#simpleTypes}.
+	 * Visit a parse tree produced by {@link PmmParser#statements}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSimpleTypes(PmmParser.SimpleTypesContext ctx);
+	T visitStatements(PmmParser.StatementsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#defVariable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDefVariable(PmmParser.DefVariableContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PmmParser#idList}.
 	 * @param ctx the parse tree
@@ -89,23 +97,17 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDefRecord(PmmParser.DefRecordContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PmmParser#stms}.
+	 * Visit a parse tree produced by {@link PmmParser#simpleTypes}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStms(PmmParser.StmsContext ctx);
+	T visitSimpleTypes(PmmParser.SimpleTypesContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PmmParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitStatement(PmmParser.StatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link PmmParser#listExpression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitListExpression(PmmParser.ListExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PmmParser#printStatement}.
 	 * @param ctx the parse tree
@@ -119,6 +121,24 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitInputStatement(PmmParser.InputStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PmmParser#listExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListExpression(PmmParser.ListExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#paramsInvocation}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParamsInvocation(PmmParser.ParamsInvocationContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpression(PmmParser.ExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PmmParser#statementIf}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -130,16 +150,4 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitStatementWhile(PmmParser.StatementWhileContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link PmmParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpression(PmmParser.ExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link PmmParser#paramsInvocation}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParamsInvocation(PmmParser.ParamsInvocationContext ctx);
 }

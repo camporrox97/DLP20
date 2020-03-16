@@ -1,6 +1,14 @@
 // Generated from C:/Users/alvaro/IdeaProjects/DiseñoLenguajes/src/parser\Pmm.g4 by ANTLR 4.8
 package parser;
 
+
+import ast.*;
+	import ast.expressions.*;
+	import ast.definitions.*;
+	import ast.statements.*;
+	import ast.types.*;
+
+
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -76,18 +84,6 @@ public class PmmBaseListener implements PmmListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDefVariable(PmmParser.DefVariableContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDefVariable(PmmParser.DefVariableContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterParametros(PmmParser.ParametrosContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -112,13 +108,25 @@ public class PmmBaseListener implements PmmListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimpleTypes(PmmParser.SimpleTypesContext ctx) { }
+	@Override public void enterStatements(PmmParser.StatementsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSimpleTypes(PmmParser.SimpleTypesContext ctx) { }
+	@Override public void exitStatements(PmmParser.StatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDefVariable(PmmParser.DefVariableContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDefVariable(PmmParser.DefVariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -172,13 +180,13 @@ public class PmmBaseListener implements PmmListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStms(PmmParser.StmsContext ctx) { }
+	@Override public void enterSimpleTypes(PmmParser.SimpleTypesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStms(PmmParser.StmsContext ctx) { }
+	@Override public void exitSimpleTypes(PmmParser.SimpleTypesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -191,18 +199,6 @@ public class PmmBaseListener implements PmmListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStatement(PmmParser.StatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterListExpression(PmmParser.ListExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitListExpression(PmmParser.ListExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -232,6 +228,42 @@ public class PmmBaseListener implements PmmListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterListExpression(PmmParser.ListExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitListExpression(PmmParser.ListExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParamsInvocation(PmmParser.ParamsInvocationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParamsInvocation(PmmParser.ParamsInvocationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpression(PmmParser.ExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpression(PmmParser.ExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStatementIf(PmmParser.StatementIfContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -251,30 +283,6 @@ public class PmmBaseListener implements PmmListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStatementWhile(PmmParser.StatementWhileContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExpression(PmmParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExpression(PmmParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterParamsInvocation(PmmParser.ParamsInvocationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParamsInvocation(PmmParser.ParamsInvocationContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

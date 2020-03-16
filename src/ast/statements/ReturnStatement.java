@@ -1,8 +1,8 @@
 package ast.statements;
 
 import ast.AbstractAstNode;
+import ast.expressions.Expression;
 
-import java.beans.Expression;
 
 public class ReturnStatement extends AbstractAstNode implements Statement {
 

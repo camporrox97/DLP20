@@ -1,5 +1,13 @@
 // Generated from C:/Users/alvaro/IdeaProjects/DiseñoLenguajes/src/parser\Pmm.g4 by ANTLR 4.8
 package parser;
+
+
+import ast.*;
+	import ast.expressions.*;
+	import ast.definitions.*;
+	import ast.statements.*;
+	import ast.types.*;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -58,16 +66,6 @@ public interface PmmListener extends ParseTreeListener {
 	 */
 	void exitDefFuncion(PmmParser.DefFuncionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PmmParser#defVariable}.
-	 * @param ctx the parse tree
-	 */
-	void enterDefVariable(PmmParser.DefVariableContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PmmParser#defVariable}.
-	 * @param ctx the parse tree
-	 */
-	void exitDefVariable(PmmParser.DefVariableContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PmmParser#parametros}.
 	 * @param ctx the parse tree
 	 */
@@ -88,15 +86,25 @@ public interface PmmListener extends ParseTreeListener {
 	 */
 	void exitDefVariablesLocales(PmmParser.DefVariablesLocalesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PmmParser#simpleTypes}.
+	 * Enter a parse tree produced by {@link PmmParser#statements}.
 	 * @param ctx the parse tree
 	 */
-	void enterSimpleTypes(PmmParser.SimpleTypesContext ctx);
+	void enterStatements(PmmParser.StatementsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PmmParser#simpleTypes}.
+	 * Exit a parse tree produced by {@link PmmParser#statements}.
 	 * @param ctx the parse tree
 	 */
-	void exitSimpleTypes(PmmParser.SimpleTypesContext ctx);
+	void exitStatements(PmmParser.StatementsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PmmParser#defVariable}.
+	 * @param ctx the parse tree
+	 */
+	void enterDefVariable(PmmParser.DefVariableContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PmmParser#defVariable}.
+	 * @param ctx the parse tree
+	 */
+	void exitDefVariable(PmmParser.DefVariableContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PmmParser#idList}.
 	 * @param ctx the parse tree
@@ -138,15 +146,15 @@ public interface PmmListener extends ParseTreeListener {
 	 */
 	void exitDefRecord(PmmParser.DefRecordContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PmmParser#stms}.
+	 * Enter a parse tree produced by {@link PmmParser#simpleTypes}.
 	 * @param ctx the parse tree
 	 */
-	void enterStms(PmmParser.StmsContext ctx);
+	void enterSimpleTypes(PmmParser.SimpleTypesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PmmParser#stms}.
+	 * Exit a parse tree produced by {@link PmmParser#simpleTypes}.
 	 * @param ctx the parse tree
 	 */
-	void exitStms(PmmParser.StmsContext ctx);
+	void exitSimpleTypes(PmmParser.SimpleTypesContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PmmParser#statement}.
 	 * @param ctx the parse tree
@@ -157,16 +165,6 @@ public interface PmmListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStatement(PmmParser.StatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PmmParser#listExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterListExpression(PmmParser.ListExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PmmParser#listExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitListExpression(PmmParser.ListExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PmmParser#printStatement}.
 	 * @param ctx the parse tree
@@ -188,6 +186,36 @@ public interface PmmListener extends ParseTreeListener {
 	 */
 	void exitInputStatement(PmmParser.InputStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PmmParser#listExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterListExpression(PmmParser.ListExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PmmParser#listExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitListExpression(PmmParser.ListExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PmmParser#paramsInvocation}.
+	 * @param ctx the parse tree
+	 */
+	void enterParamsInvocation(PmmParser.ParamsInvocationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PmmParser#paramsInvocation}.
+	 * @param ctx the parse tree
+	 */
+	void exitParamsInvocation(PmmParser.ParamsInvocationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PmmParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpression(PmmParser.ExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PmmParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpression(PmmParser.ExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PmmParser#statementIf}.
 	 * @param ctx the parse tree
 	 */
@@ -207,24 +235,4 @@ public interface PmmListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStatementWhile(PmmParser.StatementWhileContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PmmParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression(PmmParser.ExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PmmParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression(PmmParser.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PmmParser#paramsInvocation}.
-	 * @param ctx the parse tree
-	 */
-	void enterParamsInvocation(PmmParser.ParamsInvocationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PmmParser#paramsInvocation}.
-	 * @param ctx the parse tree
-	 */
-	void exitParamsInvocation(PmmParser.ParamsInvocationContext ctx);
 }
