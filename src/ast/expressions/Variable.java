@@ -1,6 +1,7 @@
 package ast.expressions;
 
 import ast.definitions.Definition;
+import visitors.Visitor;
 
 public class Variable extends AbstractExpression {
 
@@ -32,5 +33,11 @@ public class Variable extends AbstractExpression {
     @Override
     public String toString() {
         return "Variable [name=" + name + "]";
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
     }
 }

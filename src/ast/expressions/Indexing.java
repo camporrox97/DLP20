@@ -1,5 +1,7 @@
 package ast.expressions;
 
+import visitors.Visitor;
+
 public class Indexing extends AbstractExpression {
 
     private Expression leftExpression;
@@ -33,5 +35,10 @@ public class Indexing extends AbstractExpression {
                 "leftExpression=" + leftExpression +
                 ", rightExpression=" + rightExpression +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
     }
 }

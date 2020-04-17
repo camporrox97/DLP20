@@ -3,6 +3,7 @@ package ast.statements;
 
 import ast.AbstractAstNode;
 import ast.expressions.Expression;
+import visitors.Visitor;
 
 import java.util.List;
 
@@ -39,5 +40,10 @@ public class WhileStatement extends AbstractAstNode implements Statement {
                 "expression=" + expression +
                 ", statements=" + statements +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
     }
 }

@@ -1,5 +1,7 @@
 package ast.types;
 
+import visitors.Visitor;
+
 public class FieldRecord extends AbstractType  {
 
     private String name;
@@ -44,5 +46,11 @@ public class FieldRecord extends AbstractType  {
                 ", offset=" + offset +
                 ", type=" + type +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
     }
 }

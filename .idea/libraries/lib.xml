@@ -1,7 +1,8 @@
 <component name="libraryTable">
-  <library name="antlr-4.8-complete">
+  <library name="lib">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/antlr-4.8-complete.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/introspector.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

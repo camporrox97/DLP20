@@ -3,6 +3,7 @@ package ast.statements;
 import ast.expressions.AbstractExpression;
 import ast.expressions.Expression;
 import ast.expressions.Variable;
+import visitors.Visitor;
 
 import java.util.List;
 
@@ -39,5 +40,11 @@ public class Invocation extends AbstractExpression implements Statement {
                 "parameters=" + parameters +
                 ", variable=" + variable +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
     }
 }

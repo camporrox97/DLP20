@@ -1,5 +1,7 @@
 package ast.expressions;
 
+import visitors.Visitor;
+
 public class Logical  extends  AbstractExpression {
 
     private Expression leftExpression;
@@ -44,5 +46,10 @@ public class Logical  extends  AbstractExpression {
                 ", operador='" + operador + '\'' +
                 ", rightExpression=" + rightExpression +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
     }
 }

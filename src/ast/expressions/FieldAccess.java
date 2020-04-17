@@ -1,5 +1,7 @@
 package ast.expressions;
 
+import visitors.Visitor;
+
 public class FieldAccess extends AbstractExpression {
 
     private Expression expression;
@@ -33,5 +35,10 @@ public class FieldAccess extends AbstractExpression {
                 "expression=" + expression +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
     }
 }

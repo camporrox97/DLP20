@@ -1,4 +1,4 @@
-// Generated from C:/Users/alvaro/IdeaProjects/DiseñoLenguajes/src/parser\Pmm.g4 by ANTLR 4.8
+// Generated from C:/Users/camporrox/Desktop/CLASE/DLP/DLP20/src/parser\Pmm.g4 by ANTLR 4.8
 package parser;
 
 
@@ -794,8 +794,13 @@ public class PmmParser extends Parser {
 				setState(130);
 				((IdListContext)_localctx).id2 = match(ID);
 
-								_localctx.ast.add((((IdListContext)_localctx).id2!=null?((IdListContext)_localctx).id2.getText():null));
-							
+								if(_localctx.ast.contains((((IdListContext)_localctx).id2!=null?((IdListContext)_localctx).id2.getText():null))){
+				                		new ErrorType(new Variable(_localctx.start.getLine(), _localctx.start.getCharPositionInLine() + 1, (((IdListContext)_localctx).id2!=null?((IdListContext)_localctx).id2.getText():null)),
+				                		"Nombre de variable duplicada en linea: " + _localctx.start.getLine() + " columna: " +  _localctx.start.getCharPositionInLine() + 1);
+				                }else
+				                {
+				                		_localctx.ast.add((((IdListContext)_localctx).id2!=null?((IdListContext)_localctx).id2.getText():null));
+				                }
 				}
 				}
 				setState(136);
@@ -956,13 +961,16 @@ public class PmmParser extends Parser {
 				setState(154);
 				((DefVariableCamposContext)_localctx).d = defRecord();
 
-								for (FieldRecord fr: ((DefVariableCamposContext)_localctx).d.ast) {
-
-
-										_localctx.ast.add(fr);
-
-								}
-							
+				            	for (FieldRecord fr: ((DefVariableCamposContext)_localctx).d.ast) {
+				            		if (_localctx.ast.contains(fr)) {
+				            			new ErrorType(new Variable(_localctx.start.getLine(), _localctx.start.getCharPositionInLine() + 1, ""),
+				            			"Campo de struct duplicado en linea:" + _localctx.start.getLine() + "y columna: " + _localctx.start.getCharPositionInLine()+1);
+				            		}
+				            		else {
+				            			_localctx.ast.add(fr);
+				            		}
+				            				}
+				            		
 				setState(156);
 				match(T__7);
 				}

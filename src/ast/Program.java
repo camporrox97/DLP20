@@ -2,6 +2,7 @@ package ast;
 
 import ast.definitions.Definition;
 import ast.definitions.FuncDefinition;
+import visitors.Visitor;
 
 import java.util.List;
 
@@ -24,4 +25,9 @@ public class Program extends  AbstractAstNode {
         return "Program [definitions=" + definitions + "]";
     }
 
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
+    }
 }

@@ -2,6 +2,7 @@ package ast.statements;
 
 import ast.AbstractAstNode;
 import ast.expressions.Expression;
+import visitors.Visitor;
 
 //read
 public class Input extends AbstractAstNode implements Statement {
@@ -26,5 +27,11 @@ public class Input extends AbstractAstNode implements Statement {
         return "Input{" +
                 "expression=" + expression +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
     }
 }

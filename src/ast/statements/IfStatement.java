@@ -2,6 +2,7 @@ package ast.statements;
 
 import ast.AbstractAstNode;
 import ast.expressions.Expression;
+import visitors.Visitor;
 
 import java.util.List;
 
@@ -49,5 +50,11 @@ public class IfStatement extends AbstractAstNode implements Statement {
                 ", ifBody=" + ifBody +
                 ", elseBody=" + elseBody +
                 '}';
+    }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
     }
 }

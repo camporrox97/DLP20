@@ -1,5 +1,7 @@
 package ast.types;
 
+import visitors.Visitor;
+
 public class ArrayType extends AbstractType {
 
     private Type ofType;
@@ -34,4 +36,25 @@ public class ArrayType extends AbstractType {
                 ", size=" + size +
                 '}';
     }
+
+    @Override
+    public Object accept(Visitor v, Object param) {
+        return v.visit(this, param);
+
+    }
+    @Override
+    public Type squareBrackets(Type type) {
+        if (type instanceof IntType)
+            return ofType;
+        else if (type instanceof ErrorType) {
+            return type;
+        }
+        return null;
+    }
+
+    @Override
+    public int size() {
+        return size * ofType.size();
+    }
+
 }
